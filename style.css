@@ -526,32 +526,52 @@ footer{
 
 }
 
-@media(max-width:768px){
+/* Mobile responsive fix */
+@media (max-width: 768px) {
 
-    section{
-        padding:60px 0;
+    /* Contact section */
+    .contact-section {
+        width: 100%;
+        padding: 30px 15px;
+        box-sizing: border-box;
     }
 
-    h2{
-        font-size:2rem;
+    /* Form */
+    .contact-form {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
-    .hero{
-        padding:0 20px;
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
-    .hero h1{
-        font-size:2rem;
+    .contact-form textarea {
+        min-height: 150px;
     }
 
-    .hero p{
-        font-size:16px;
+    .contact-form button {
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    .btn{
-        padding:12px 28px;
+    /* Map */
+    .map-container,
+    .map-container iframe {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
+    .map-container iframe {
+        height: 300px;
+        display: block;
+        border: 0;
+    }
 }
 
 @media(max-width:500px){
