@@ -526,72 +526,74 @@ footer{
 
 }
 
-/* Mobile responsive fix */
+/* =========================
+   MOBILE RESPONSIVE FIX
+   ========================= */
+
 @media (max-width: 768px) {
 
-    /* Contact section */
-    .contact-section {
+    html,
+    body {
         width: 100%;
-        padding: 30px 15px;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 92%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-grid > * {
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* FORM */
+    .contact-grid form {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .contact-grid form input:not([type="hidden"]):not([type="checkbox"]),
+    .contact-grid form textarea {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         box-sizing: border-box;
     }
 
-    /* Form */
-    .contact-form {
+    .contact-grid form textarea {
+        height: 150px;
+    }
+
+    .contact-grid form button {
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
     }
 
-    .contact-form input,
-    .contact-form textarea {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    .contact-form textarea {
-        min-height: 150px;
-    }
-
-    .contact-form button {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Map */
-    .map-container,
-    .map-container iframe {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    .map-container iframe {
-        height: 300px;
+    /* MAP */
+    .contact-grid iframe {
         display: block;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: 280px;
         border: 0;
-    }
-}
-
-@media(max-width:500px){
-
-    .logo{
-        font-size:18px;
-    }
-
-    .hero h1{
-        font-size:1.7rem;
-    }
-
-    .hero p{
-        font-size:15px;
-    }
-
-    .service-card,
-    .card,
-    .testimonial{
-        padding:25px;
+        box-sizing: border-box;
     }
 
 }
