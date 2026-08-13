@@ -62,9 +62,7 @@ faqQuestions.forEach(question => {
 
 const form = document.getElementById("contactForm");
 
-form.addEventListener("submit", function(e){
-
-    e.preventDefault();
+form.addEventListener("submit", function(e) {
 
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
@@ -72,35 +70,36 @@ form.addEventListener("submit", function(e){
     const message = document.getElementById("message").value.trim();
 
     const emailPattern =
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const phonePattern =
-    /^[0-9]{10}$/;
+        /^[0-9]{10}$/;
 
-    if(name.length < 3){
+    if (name.length < 3) {
+        e.preventDefault();
         alert("Please enter your full name.");
         return;
     }
 
-    if(!emailPattern.test(email)){
+    if (!emailPattern.test(email)) {
+        e.preventDefault();
         alert("Please enter a valid email address.");
         return;
     }
 
-    if(!phonePattern.test(phone)){
+    if (!phonePattern.test(phone)) {
+        e.preventDefault();
         alert("Phone number must contain exactly 10 digits.");
         return;
     }
 
-    if(message.length < 10){
+    if (message.length < 10) {
+        e.preventDefault();
         alert("Message should contain at least 10 characters.");
         return;
     }
 
-    alert("Thank you! Your message has been submitted successfully.");
-
-    form.reset();
-
+    // If everything is valid, the form will be submitted to Web3Forms
 });
 
 /* ==========================
@@ -134,7 +133,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     anchor.addEventListener("click", function(e){
 
-        e.preventDefault();
+        
 
         const target =
         document.querySelector(this.getAttribute("href"));
@@ -203,15 +202,15 @@ window.addEventListener("scroll", () => {
 
     sections.forEach(section => {
 
-        const sectionTop = section.offsetTop - 100;
+    const sectionTop = section.offsetTop - 100;
 
-        if(pageYOffset >= sectionTop){
+    if(window.scrollY >= sectionTop){
 
-            current = section.getAttribute("id");
+        current = section.getAttribute("id");
 
-        }
+    }
 
-    });
+});
 
     navItems.forEach(link => {
 
